@@ -1,2 +1,2 @@
 # deeplink-example
-How to create deeplink using Expo + NestJS
+How to create and use deeplink (Expo + NestJS)

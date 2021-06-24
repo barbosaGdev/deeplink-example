@@ -1,9 +1,18 @@
-import { Controller, Get, Param, Res } from '@nestjs/common';
+// eslint-disable-next-line prettier/prettier
+import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
+import { RoutingService } from './routing.service';
 
-@Controller('routing')
+@Controller()
 export class RoutingController {
-  @Get(':code')
-  redirect(@Param('code') code: string, @Res() res): void {
-    res.redirect(`${process.env.DEEP_LINK_HOST}/about/${code}`);
+  constructor(private routingService: RoutingService) {}
+
+  @Get('urls/:shortCode')
+  redirect(@Param('shortCode') shortCode: string, @Res() res): void {
+    this.routingService.redirect(shortCode, res);
+  }
+
+  @Post('shortener')
+  shortener(@Body() { code }: Record<any, string>): void {
+    this.routingService.shortener({ code });
   }
 }

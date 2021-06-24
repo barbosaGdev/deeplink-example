@@ -1,2 +1,9 @@
-# deeplink-example
-How to create and use deeplink (Expo + NestJS)
+# Trabalhando com Deeplinks
+
+Como criar e utilizar Deeplinks no React Native (Expo + NestJS)
+
+
+# Expo App
+
+
+# Nest API
